@@ -1,0 +1,37 @@
+<section class="Home vh-100 vw-100">
+  <mat-toolbar color="secondary">
+    <header class="header d-flex align-items-center w-100 h-100">
+      <div class="brand d-flex justify-content-between">
+        <button class="" mat-icon-button (click)="toggleDrawer()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h4 class="mb-0">Forms playground</h4>
+      </div>
+    </header>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="w-100 h-100 d-flex" [hasBackdrop]="true">
+    <mat-sidenav [(opened)]="isOpen" class="bg-white">
+      <mat-nav-list>
+        <mat-list-item *ngFor="let link of links">
+          <a
+            matLine
+            class="d-flex align-items-center justify-content-center"
+            [routerLink]="link.linkTo"
+          >
+            <span>{{ link.pathName }}</span>
+          </a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content
+      class="vh-100 w-100 grayy"
+      [style.background]="'#edf2f7'"
+    >
+      <section class="main-content grayy">
+        <ng-content select="[mainContent]"></ng-content>
+      </section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>
