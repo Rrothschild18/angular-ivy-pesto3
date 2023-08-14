@@ -24,7 +24,7 @@ import {
   distinctUntilChanged,
   tap,
 } from 'rxjs';
-import { NgTemplateNameDirective } from 'src/app/directives/ng-template-name.directive';
+// import { NgTemplateNameDirective } from 'src/app/directives/ng-template-name.directive';
 
 import {
   Field,
@@ -175,8 +175,8 @@ export class FormComponent implements OnInit, OnDestroy {
 
   private subSinks: Subscription = new Subscription();
 
-  @ContentChildren(NgTemplateNameDirective)
-  _templates!: QueryList<NgTemplateNameDirective>;
+  // @ContentChildren(NgTemplateNameDirective)
+  // _templates!: QueryList<NgTemplateNameDirective>;
 
   constructor(private fb: FormBuilder, private formService: FormViewService) {}
 
@@ -387,11 +387,11 @@ export class FormComponent implements OnInit, OnDestroy {
     return [addedKeysFromIncomingFields, deletedKeysFromControls];
   }
 
-  getTemplateRefByName(name: string): TemplateRef<any> | null {
-    const dir = this._templates.find((dir) => dir.name === name);
+  // getTemplateRefByName(name: string): TemplateRef<any> | null {
+  //   const dir = this._templates.find((dir) => dir.name === name);
 
-    return dir ? dir.template : null;
-  }
+  //   return dir ? dir.template : null;
+  // }
 
   fieldContext(field: Field): FormFieldContext {
     return {
