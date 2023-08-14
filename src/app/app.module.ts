@@ -8,7 +8,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './views/home/home.component';
 import { AppRoutingModule } from './routing.module';
 import { NgTemplateNameDirective } from './directives/ng-template-name.directive';
-// import { FormComponent } from './components/form/form.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, MaterialModule, AppRoutingModule],
@@ -17,7 +17,7 @@ import { NgTemplateNameDirective } from './directives/ng-template-name.directive
     AppComponent,
     LayoutComponent,
     HomeComponent,
-    // FormComponent,
+    FormComponent,
   ],
   bootstrap: [AppComponent],
 })
