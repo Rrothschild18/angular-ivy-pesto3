@@ -1,3 +1,50 @@
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ContentChildren,
+  Input,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  TemplateRef,
+} from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import {
+  BehaviorSubject,
+  Observable,
+  Subscription,
+  combineLatest,
+  debounceTime,
+  distinctUntilChanged,
+  tap,
+} from 'rxjs';
+import { NgTemplateNameDirective } from 'src/app/directives/ng-template-name.directive';
+
+import {
+  Field,
+  FieldColumnConfigTypes,
+  FieldsAttributesConfig,
+  FieldsColumnsConfig,
+  FieldsConfig,
+  FieldsValidatorsConfig,
+  FormFieldContext,
+} from 'src/app/interfaces';
+import { FormViewService } from './form-view-service.service';
+
+export type FormViewModel = {
+  fields: FieldsConfig<{}>;
+  columns: FieldsColumnsConfig;
+  validators: FieldsValidatorsConfig;
+  attributes: FieldsAttributesConfig;
+  values: any;
+};
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
